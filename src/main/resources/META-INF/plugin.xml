@@ -1,0 +1,44 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>file.new_file_from_selection</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>New File from Selection</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="grunin.rg@gmail.com" url="https://github.com/r-oman-G">Roman Grunin</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description><![CDATA[
+        <p><strong>Create File From Selection</strong> is an intuitive IntelliJ IDEA plugin that enhances your coding workflow by allowing you to quickly create a new file from selected text within your current editor. This plugin is ideal for developers looking to streamline their development process, reduce repetitive tasks, and organize code more efficiently.</p>
+        <p>Features include:</p>
+        <ul>
+            <li><strong>Quick File Creation:</strong> Easily create a new file by selecting text and using a context menu command. The plugin automatically suggests a file name based on the original file, but you can customize it as needed.</li>
+            <li><strong>Optional Text Movement:</strong> A checkbox allows you to decide whether to move the selected text to the new file or just copy it, giving you flexibility depending on your workflow needs.</li>
+            <li><strong>Support for All File Types:</strong> Works with any file type, whether it has an extension or not. The plugin adapts to include the appropriate file extension based on the original file or allows for custom extensions as specified by the user.</li>
+            <li><strong>Context-Sensitive Visibility:</strong> The action to create a new file only appears when text is selected, reducing clutter in your IDE and ensuring the option is available when you need it most.</li>
+        </ul>
+        <p>This plugin is a must-have for any IntelliJ user looking to optimize their development environment. It's simple, yet powerful—designed to save time and make your coding experience smoother and more productive.</p>
+    ]]></description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+
+    </extensions>
+
+    <actions>
+        <action id="CreateFileFromSelection" class="CreateFileFromSelection" text="Create File from Selection"
+                description="Create dart file from selection">
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </action>
+    </actions>
+</idea-plugin>
